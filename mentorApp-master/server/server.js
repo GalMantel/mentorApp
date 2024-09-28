@@ -30,7 +30,6 @@ mongoose.connection.once('open',async  () => {
     console.log('Connected to MongoDB!');
 
     try {
-        // Use async/await to ensure MongoDB operations happen after the connection is fully ready
         const collections = await mongoose.connection.db.listCollections().toArray();
         console.log('Collections in mentorApp:', collections.map(collection => collection.name));
     } catch (err) {
